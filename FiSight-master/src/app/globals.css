@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 140 5% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 140 5% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 5% 20%;
+    --primary: 140 60% 40%;
+    --primary-foreground: 140 20% 98%;
+    --secondary: 140 20% 95%;
+    --secondary-foreground: 140 5% 20%;
+    --muted: 140 20% 95%;
+    --muted-foreground: 140 5% 45%;
+    --accent: 140 50% 60%;
+    --accent-foreground: 140 100% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 140 20% 90%;
+    --input: 140 20% 92%;
+    --ring: 140 60% 40%;
+    --chart-1: 140 60% 40%;
+    --chart-2: 140 50% 60%;
+    --chart-3: 140 50% 70%;
+    --chart-4: 140 60% 80%;
+    --chart-5: 140 40% 90%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 195 15% 13%; /* #1C2529 */
+    --foreground: 148 37% 73%; /* #A1D1B1 */
+    --card: 195 15% 16%;
+    --card-foreground: 148 37% 73%;
+    --popover: 195 15% 13%;
+    --popover-foreground: 148 37% 73%;
+    --primary: 148 37% 73%; /* #A1D1B1 */
+    --primary-foreground: 195 15% 10%;
+    --secondary: 195 15% 20%;
+    --secondary-foreground: 148 37% 85%;
+    --muted: 195 15% 20%;
+    --muted-foreground: 148 20% 60%;
+    --accent: 148 37% 80%;
+    --accent-foreground: 195 15% 5%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 195 15% 25%;
+    --input: 195 15% 25%;
+    --ring: 148 37% 73%;
+    --chart-1: 148 37% 73%;
+    --chart-2: 148 30% 60%;
+    --chart-3: 148 40% 50%;
+    --chart-4: 148 50% 80%;
+    --chart-5: 148 20% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Suppress browser extension attributes that cause hydration errors */
+  *[fdprocessedid],
+  *[data-lastpass-icon-root],
+  *[data-1password],
+  *[data-bitwarden],
+  *[autocomplete="off"] {
+    /* Browser extension attributes - documented for hydration compatibility */
+    content: "";
+  }
+  
+  /* Custom fonts for better Hindi/English display */
+  .font-hindi {
+    font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+  }
+  
+  .font-headline {
+    font-family: 'Space Grotesk', 'Noto Sans Devanagari', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
+  }
+
+  /* AI Chatbot Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+  
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(var(--primary), 0.3); }
+    50% { box-shadow: 0 0 30px rgba(var(--primary), 0.6); }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-in-up {
+    animation: slideInUp 0.5s ease-out;
+  }
+}
